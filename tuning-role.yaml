@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: tuning
+  name: workload-manager-tuning
+rules:
+- apiGroups: ["apps", "batch", ""]
+  resources: ["deployments", "pods", "pods/log", "pods/exec", "services", "jobs"]
+  verbs: ["get", "list", "create", "apply", "delete", "watch", "update"]

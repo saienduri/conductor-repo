@@ -1,0 +1,14 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: workload-manager-dev-binding
+  namespace: dev
+subjects:
+- kind: User
+  name: anon
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: workload-manager-dev
+  apiGroup: rbac.authorization.k8s.io
+

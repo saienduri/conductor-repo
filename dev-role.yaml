@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: dev
+  name: workload-manager-dev
+rules:
+- apiGroups: ["apps", "batch", ""]
+  resources: ["deployments", "pods", "pods/log", "pods/exec", "services", "jobs"]
+  verbs: ["get", "list", "wait", "create", "apply", "delete", "watch", "update"]
