@@ -16,8 +16,7 @@ spec:
         kubernetes.io/arch: amd64
       priorityClassName: system-node-critical
       tolerations:
-      - key: CriticalAddonsOnly
-        operator: Exists
+      - operator: "Exists"
       containers:
       - image: rocm/k8s-device-plugin
         name: amdgpu-dp-cntr
